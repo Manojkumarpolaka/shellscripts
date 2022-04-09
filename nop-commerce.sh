@@ -38,3 +38,5 @@ sudo cp -r ./nopCommerce450.service /etc/systemd/system/nopCommerce450.service
 
 sudo systemctl start nopCommerce450.service
 
+systemctl daemon-reload
+
