@@ -1,5 +1,27 @@
 #!/bin/bash
 
+sudo wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+
+sudo dpkg -i packages-microsoft-prod.deb
+
+# Install the .NET runtime
+
+sudo apt-get update
+
+sudo apt-get install -y apt-transport-https aspnetcore-runtime-6.0
+
+# Install the nginx package
+
+sudo apt-get install nginx -y 
+
+# Run the nginx service
+
+sudo systemctl start nginx
+
+# configure nginx as a reverse proxy to forward requests to your ASP.NET Core app
+
+sudo cp -r ./reverseproxy /etc/nginx/sites-available/default
+
 # creating the directory for nopcommerce
 
 sudo mkdir /var/www/nopCommerce450
@@ -39,4 +61,6 @@ sudo cp -r ./nopCommerce450.service /etc/systemd/system/nopCommerce450.service
 sudo systemctl start nopCommerce450.service
 
 systemctl daemon-reload
+
+systemctl restart nginx
 
