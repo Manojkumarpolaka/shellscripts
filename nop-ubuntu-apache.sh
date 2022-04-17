@@ -6,7 +6,8 @@ sudo wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-
 sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 sudo apt-get install -y apt-transport-https aspnetcore-runtime-6.0
-sudo cp -r ./reverseproxy-ubuntu-apache /etc/nginx/sites-available/nop.conf
+sudo cp -r ./reverseproxy-ubuntu-apache /etc/apache2/sites-available/nop.conf
+sudo a2ensite nop.conf
 sudo mkdir /var/www/nopCommerce450 #creating directory for nop commerce
 cd /var/www/nopCommerce450 
 sudo wget https://github.com/nopSolutions/nopCommerce/releases/download/release-4.50.1/nopCommerce_4.50.1_NoSource_linux_x64.zip
