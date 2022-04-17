@@ -54,7 +54,7 @@ sudo chown -R www-data nopCommerce450/
 
 # Create the service file for nopcommerce in /etc/systemd/system/nopCommerce450.service with the following contents
 
-sudo cp -r ./nopCommerce450.service /etc/systemd/system/nopCommerce450.service
+sudo cp -r ~/shell/nopCommerce450.service /etc/systemd/system/nopCommerce450.service
 
 # Start the nopcommerce service
 
